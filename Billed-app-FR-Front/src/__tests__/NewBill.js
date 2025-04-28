@@ -155,14 +155,6 @@ describe("Given I am connected as an employee", () => {
       // Vérifier que le fichier est bien présent dans l'input
       expect(billFile.files[0].name).toBeDefined();
       expect(spyFileChange).toBeCalled();
-
-      // Espionner l'événement de soumission du formulaire
-      const spySubmit = jest.fn((e) => newBill.handleSubmit(e));
-      formNewBill.addEventListener("submit", spySubmit);
-
-      // Simuler la soumission du formulaire
-      fireEvent.submit(formNewBill);
-      expect(spySubmit).toHaveBeenCalled();
     });
 
     test("then submit navigates to Bills page", async () => {

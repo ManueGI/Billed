@@ -47,13 +47,10 @@ describe("Given I am connected as an employee", () => {
       expect(screen.getByTestId("btn-new-bill")).toBeTruthy();
     })
 
-     // Define a function to handle the click event for the "New expense note" button
-     const handleClickNewBill = jest.fn((e) => bills.handleClickNewBill(e));
   })
 
   describe('When I click on one icon eye', () => {
     test('A modal should open !', () => {
-
 
      // On ajoute artificiellement la méthode modal pour éviter l'erreur "modal is not a function"
       $.fn.modal = jest.fn(() => modaleFile.classList.add("show"));
@@ -80,7 +77,7 @@ describe("Given I am connected as an employee", () => {
 
       // Vérifier que la modale (élément avec data-testid 'modaleFile') est présente
       const modale = screen.getByTestId('modaleFile');
-      expect(modaleFile.classList.contains("show")).toBe(true);
+      expect(modale.classList.contains("show")).toBe(true);
     });
   });
 
